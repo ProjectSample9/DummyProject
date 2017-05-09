@@ -1,9 +1,19 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('BUILD') {
       steps {
-        svn(url: 'http://192.168.2.144:8080/rsaaegapp/', poll: true)
+        echo 'Hi This is Build Environment'
+      }
+    }
+    stage('TESTING') {
+      steps {
+        echo 'HI This is Testing Environment'
+      }
+    }
+    stage('DEPLOYMENT') {
+      steps {
+        echo 'Hi This is Deployment Environment'
       }
     }
   }
